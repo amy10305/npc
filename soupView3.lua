@@ -10,10 +10,10 @@ local scene = composer.newScene()
 function scene:create( event )
 	local sceneGroup = self.view
 
-	--점수 판별
+	--[[점수 판별
 	if(j % 3 == 0 or j % 3 == 2)then
 		rabbitpoint = rabbitpoint - 1
-	end
+	end]]
 
 	local c = 0
 	
@@ -27,56 +27,36 @@ function scene:create( event )
 	local pot = display.newImage("이미지/음식/재료/1차/당근/0번냄비.png")
 	pot.x = display.contentWidth * 0.363
 	pot.y = display.contentHeight * 0.4
+	sceneGroup:insert(pot)
 
-	--불
-	local fire = {}
-	fire[1] = display.newImage("이미지/음식/재료/1차/당근/불_약불.png")
-	fire[2] = display.newImage("이미지/음식/재료/1차/당근/불_중불.png")
-	fire[3] = display.newImage("이미지/음식/재료/1차/당근/불_강불.png")
-
-	fire[1].alpha=1
-
-	for i=2,3 do
-		fire[i].alpha=0
+	--[[불, 손잡이
+	local fire
+	local handle
+	if(j % 3 == 1)then
+		fire = display.newImage("이미지/음식/재료/1차/당근/불_약불.png")
+		handle = display.newImage("이미지/음식/재료/1차/당근/손잡이_약불.png")
+	elseif(j % 3 == 2) then
+		fire = display.newImage("이미지/음식/재료/1차/당근/불_중불.png")
+		handle = display.newImage("이미지/음식/재료/1차/당근/손잡이_중불.png")
+	else(j % 3 == 0 then)
+		fire = display.newImage("이미지/음식/재료/1차/당근/불_강불.png")
+		handle = display.newImage("이미지/음식/재료/1차/당근/손잡이_강불.png")
 	end
 
-	fire[1].y = display.contentHeight * 0.7
-	fire[2].y = display.contentHeight * 0.65
-	fire[3].y = display.contentHeight * 0.62
+	sceneGroup:insert(fire)
+	sceneGroup:insert(handle)
+	]]
 
-	for i=1,3 do
-		fire[i].x = display.contentWidth * 0.363
-		sceneGroup:insert(fire[i])
-	end
-
-	--손잡이
-	local handle = {}
-	handle[1] = display.newImage("이미지/음식/재료/1차/당근/손잡이_약불.png")
-	handle[2] = display.newImage("이미지/음식/재료/1차/당근/손잡이_중불.png")
-	handle[3] = display.newImage("이미지/음식/재료/1차/당근/손잡이_강불.png")
-
-	handle[1].alpha = 1
-
-	for i = 2, 3 do
-		handle[i].alpha = 0
-	end
-
-	for i=1,3 do
-		handle[i].x = display.contentWidth * 0.9
-		handle[i].y = display.contentHeight * 0.85
-		sceneGroup:insert(handle[i])
-	end
-
-	--다진마늘
+	--버터
 	local butter = display.newImageRect("이미지/음식/재료/1차/버터.png", 368.25, 280.5)
-	butter.x = display.contentWidth *0.2
-	butter.y = display.contentHeight * 0.2
+	butter.x = display.contentWidth *0.9
+	butter.y = display.contentHeight * 0.3
 	sceneGroup:insert(butter)
 
 	--당근
 	local carrot = display.newImageRect("이미지/음식/재료/1차/당근썰기/당근_3단계.png", 626.25, 132)
-	carrot.x = display.contentWidth *0.76
-	carrot.y = display.contentHeight * 0.2
+	carrot.x = display.contentWidth *0.85
+	carrot.y = display.contentHeight * 0.5
 	sceneGroup:insert(carrot)
 
 	--드래그 앤 드랍 이벤트

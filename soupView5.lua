@@ -13,27 +13,27 @@ function scene:create( event )
 	local c = 0
 	
 	--배경
-	local background = display.newImage("이미지/음식/요리테이블.png")
+	local background = display.newImage("이미지/음식/재료/1차/당근/가스레인지.png")
 	background.x = display.contentWidth / 2
 	background.y = display.contentHeight / 2
 	sceneGroup:insert(background)
 
 	--냄비
-	local pot = display.newImage("이미지/음식/재료/1차/추가/빈볼.png")
-	pot.x = display.contentWidth / 2
-	pot.y = display.contentHeight * 0.6
+	local pot = display.newImage("이미지/음식/재료/1차/당근/1당근냄비.png")
+	pot.x = display.contentWidth * 0.363
+	pot.y = display.contentHeight * 0.4
 	sceneGroup:insert(pot)
 
 	--물
 	local water = display.newImageRect("이미지/음식/재료/1차/물.png", 192.375,487.125)
-	water.x = display.contentWidth *0.2
-	water.y = display.contentHeight * 0.3
+	water.x = display.contentWidth *0.85
+	water.y = display.contentHeight * 0.2
 	sceneGroup:insert(water)
 
 	--다진마늘
 	local garlic = display.newImageRect("이미지/음식/재료/1차/다진마늘.png", 324.75, 245.625)
-	garlic.x = display.contentWidth *0.8
-	garlic.y = display.contentHeight * 0.3
+	garlic.x = display.contentWidth *0.85
+	garlic.y = display.contentHeight * 0.54
 	sceneGroup:insert(garlic)
 
 	--드래그 앤 드랍 이벤트
