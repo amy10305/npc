@@ -18,7 +18,7 @@ squirrelpoint = 1
 
 -- event listeners for tab buttons:
 local function onFirstView( event )
-	composer.gotoScene( "soupView5" )
+	composer.gotoScene( "soupView1" )
 end
 
 

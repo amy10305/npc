@@ -60,7 +60,7 @@ function scene:create( event )
 		sceneGroup:insert(fire[i])
 	end
 
-	local j=1
+	j=1
     local function click(event)
         j=j+1
 		if (j % 3 == 1)then
